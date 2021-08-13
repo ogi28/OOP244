@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/vivian.dir/canisterMain.cpp.o CMakeFiles/vivian.dir/cstring.cpp.o CMakeFiles/vivian.dir/Canister.cpp.o  -o vivian 

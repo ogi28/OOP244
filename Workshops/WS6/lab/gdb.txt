@@ -1,0 +1,15 @@
+ulimit -c (this will show the maximum limit for the core), try man X later
+ulimit -c unlimited (sets core limit to unlimited) have to do it everytime unless its in bashrc
+These lets us get our core file. After we get this we can debug using gdb
+Now to start gdb, either normally run the program which gives us a core dump if we get segfault. THEN 
+$ gdb "executable file name" core 
+This starts gdb prompt.
+gdb> bt 
+(stands for backtrace)  
+shows details of segfault. 
+
+**REMEMBER TO DELETE YOUR CORE FILE EVERYTIME YOU CHANGE YOUR CODE AND COMPILE**
+sometimes you won't get line numbers if you don't ^ (remember your compile needs -g)
+
+
+

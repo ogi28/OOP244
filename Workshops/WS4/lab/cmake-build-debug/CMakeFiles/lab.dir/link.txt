@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/lab.dir/Canister.cpp.o CMakeFiles/lab.dir/canisterMain.cpp.o CMakeFiles/lab.dir/cstring.cpp.o  -o lab 

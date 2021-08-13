@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS4/lab/Canister.h
+iostream
+-
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS4/lab/canisterMain.cpp
+iostream
+-
+Canister.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS4/lab/Canister.h
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS4/lab/cstring.cpp
+cstring.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS4/lab/cstring.h
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS4/lab/cstring.h
+

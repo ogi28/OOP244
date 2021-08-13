@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS5/DIY/Mark.cpp
+Mark.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS5/DIY/Mark.h
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS5/DIY/Mark.h
+

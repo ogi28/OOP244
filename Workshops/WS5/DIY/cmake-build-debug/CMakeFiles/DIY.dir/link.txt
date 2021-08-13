@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/DIY.dir/Mark.cpp.o CMakeFiles/DIY.dir/markMain.cpp.o  -o DIY 

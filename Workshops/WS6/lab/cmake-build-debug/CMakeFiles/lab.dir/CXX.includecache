@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS6/lab/TextFile.cpp
+iostream
+-
+fstream
+-
+string
+-
+TextFile.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS6/lab/TextFile.h
+cstring.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS6/lab/cstring.h
+cstring
+-
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS6/lab/TextFile.h
+iostream
+-
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS6/lab/cstring.cpp
+cstring.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS6/lab/cstring.h
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS6/lab/cstring.h
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS6/lab/w6p1_tester.cpp
+iostream
+-
+fstream
+-
+string
+-
+TextFile.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS6/lab/TextFile.h
+

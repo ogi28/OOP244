@@ -1,0 +1,193 @@
+/*
+ * Ogulcan Tayhan 
+ * 104472204
+ * otayhan@myseneca.ca
+ * 10.02.2021
+ * I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+ */
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <istream>
+#include <iomanip>
+#include "cstring.h"  // using strLen, strCpy and strCmp 
+#include "Canister.h"
+using namespace std;
+namespace sdds {
+
+	const double Canister::PI = 3.14159265; // global constant
+
+	void Canister::setToDefault()
+	{
+		m_contentName = nullptr;
+		m_height = 13.0;
+		m_diameter = 10.0;
+		m_usable = true;
+		m_contentVolume = 0.0;
+	}
+
+
+	bool Canister::isEmpty()const
+	{
+		return m_contentVolume < 0.00001;
+	}
+
+	bool Canister::hasSameContent(const Canister& C)const
+	{
+		bool OneEntryOneExit = false;
+		if (this->m_contentName != nullptr && C.m_contentName != nullptr && strCmp(C.m_contentName, m_contentName) == 0)
+		{
+			OneEntryOneExit = true;
+		}
+		 return OneEntryOneExit;
+
+
+	}
+
+	void Canister::setName(const char* Cstr)
+	{
+        if (Cstr != nullptr && Cstr[0] != '\0' && m_usable) 
+		{
+            delete[] this->m_contentName; // deallocate
+            this->m_contentName = nullptr;
+
+           this->m_contentName = new char[strLen(Cstr) + 1];
+            strCpy(this->m_contentName, Cstr);
+        }
+    }
+
+
+	Canister::Canister()
+	{
+		setToDefault();
+		return;
+	}
+
+	Canister::Canister(const char* contentName) : Canister() // calls the empty (default) constructor
+	{
+		//if everything isn't set to default, they will  have garbage values.
+		//setToDefault();
+		setName(contentName);
+		return;
+	}
+
+	Canister::Canister(double height, double diameter, const char* contentName) : Canister()
+	{
+		if (diameter >= 10 && height >= 10 && height <= 40 && diameter <= 30)
+		{
+			this->m_diameter = diameter;
+			this->m_height = height;
+			this->m_contentVolume = 0;
+			setName(contentName);
+		}
+		else m_usable = false;
+
+		return;
+	}
+	
+	Canister::~Canister() // gets called automatically like constructor. When the object go out of scope (for example in the main, object array is created. But once we return they go out of scope so destructor gets called).
+	{
+		/*if (this->m_contentName != nullptr)
+		{
+			delete[] m_contentName;
+		}
+		m_contentName = nullptr;*/
+		clear();
+		//calling the clear function here to deconstruct makes the code do 2 unnecessary steps.
+		//But the code is cleaner 
+		
+	}
+	void Canister::clear()
+	{
+		if (this->m_contentName != nullptr)
+		{
+			delete[] m_contentName;
+		}
+		this->m_contentName = nullptr;
+		this->m_usable = true;
+		this->m_contentVolume = 0.0;
+
+	}
+
+
+	double Canister::capacity()const
+	{
+		return  PI * (this->m_height - 0.267) * (this->m_diameter / 2) * (this->m_diameter / 2);
+	}
+
+	double Canister::volume()const
+	{
+		return this->m_contentVolume;
+	}
+
+	Canister& Canister::setContent(const char* contentName)
+	{
+		if (contentName == nullptr) this->m_usable = false;
+		else if (isEmpty()) setName(contentName);
+		else if (strCmp(contentName, this->m_contentName) != 0) m_usable = false;
+		return *this;
+	}
+
+	Canister& Canister::pour(double quantity)
+	{
+		if (this->m_usable && quantity > 0 && capacity() >= (quantity + this->m_contentVolume))
+		{
+			this->m_contentVolume += quantity;
+		}
+		else this->m_usable = false;
+		return *this;
+
+		/*Adds the quantity argument to the content volume of the Canister if the quantity fits in the Canister. Otherwise, it will render the Canister unusable and then returns the reference of the current object.
+		Use this rule to accomplish the above :
+		If the Canister is usable and the quantity is more than zero and if the sum of the quantityand the volume() is less than or equal to the capacity(), add the quantity to the content volume, otherwise set usable flag attribute to false.*/
+	}
+
+	Canister& Canister::pour(Canister& C)
+	{
+		setContent(C.m_contentName);
+		if (C.m_contentVolume > this->capacity() - this->m_contentVolume)
+		{
+			C.m_contentVolume -= this->capacity() - this->m_contentVolume;
+			this->m_contentVolume = this->capacity();
+		}
+		else
+		{
+			pour(C.m_contentVolume);
+			C.m_contentVolume = 0.0;
+		}
+
+			return *this;
+	}
+	
+	std::ostream& Canister::display()const
+	{
+		cout << fixed << setprecision(1) << setw(7) << right << this->capacity();
+		cout << "cc (" << this->m_height << "x" << this->m_diameter << ") Canister";
+		if (!this->m_usable)
+		{
+			cout << " of Unusable content, discard!";
+		}
+		else if (this->m_contentName != nullptr)
+		{
+			cout << " of " << fixed << setprecision(1) << setw(7) << right << this->m_contentVolume;
+			cout << "cc   " << this->m_contentName;
+		}
+
+		return cout;
+	}
+}
+
+
+//Five good ones and 4 bad ones :
+//Capacity, Dimensions            Volume     Content
+//------------------------------    -------- - -------------------------- -
+//1000.0cc(13.0x10.0) Canister
+//1000.0cc(13.0x10.0) Canister
+//1000.0cc(13.0x10.0) Canister of     0.0cc   Orange Juice
+//28085.6cc(40.0x30.0) Canister
+//1549.8cc(20.0x10.0) Canister of     0.0cc   Olive Oil
+//1000.0cc(13.0x10.0) Canister of Unusable content, discard!
+//1000.0cc(13.0x10.0) Canister of Unusable content, discard!
+//1000.0cc(13.0x10.0) Canister of Unusable content, discard!
+//1000.0cc(13.0x10.0) Canister of Unusable content, discard!
+//------------------------------------------------------------------------

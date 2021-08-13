@@ -1,0 +1,4 @@
+/snap/clion/145/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/cmake-build-debug

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/MotorVehicle.cpp
+iostream
+-
+iomanip
+-
+MotorVehicle.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/MotorVehicle.h
+cstring.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/cstring.h
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/MotorVehicle.h
+iostream
+-
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/Truck.cpp
+Truck.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/Truck.h
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/Truck.h
+MotorVehicle.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/MotorVehicle.h
+iostream
+-
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/cstring.h
+
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/main.cpp
+iostream
+-
+Truck.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/Truck.h
+Truck.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/Truck.h
+MotorVehicle.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/MotorVehicle.h
+MotorVehicle.h
+/home/john/Seneca/2nd Semester/OOP244 - Introduction to Objeect Oriented Programming/WS7/lab/MotorVehicle.h
+
